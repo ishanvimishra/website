@@ -1,0 +1,231 @@
+
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-image: url('clover.jpeg'); /* Add your image path here */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Optional: Fixes the background during scroll */
+}
+
+.border-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.top-border,
+.bottom-border {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 120%;
+}
+
+.left-border,
+.right-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 104%;
+    width: 20.85%;
+}
+
+.border-item {
+    flex: 1;
+    margin: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Added for positioning the overlay */
+    overflow: hidden; /* Ensures nothing goes outside the container */
+    cursor: pointer; /* Indicates the area can be clicked */
+}
+
+.border-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Initially hide images */
+}
+
+
+.left-border .border-item {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.right-border .border-item {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.right-border .border-item:last-child,
+.left-border .border-item:last-child {
+    margin-bottom: 16px; /* Increased bottom margin for the last item */
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+}
+
+.main-content-area {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Add rounded corners */
+    height: auto; /* Remove the fixed height */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, Geneva, Tahoma, sans-serif, sans-serif; /* Change the font family */
+    color: white; /* Set text color to white */
+    font-weight: bold; /* Make the text bold */
+}
+
+
+.border-item {
+    /* Set a fixed width or height depending on your layout */
+    /* Example for a fixed height: */
+    height: 150px; /* Adjust to your needs */
+    margin: 5px;
+    border: 0.5px solid white;
+    position: relative; /* Needed for the aspect ratio trick */
+    cursor: pointer;
+}
+
+.border-item::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 100%; /* This creates an aspect ratio of 1:1 */
+    /* Adjust padding-top value to change the aspect ratio */
+}
+
+.border-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.main-content-area {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    border: 1px solid rgb(1, 100, 23);
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Horizontally center-align content */
+    height: 95%;
+    overflow: auto;
+    background-color: rgba(1, 100, 23, 0.6); /* Opaque white */
+    position: relative; /* Add position relative for absolute positioning */
+}
+
+.centered-text {
+    text-align: center; /* Horizontally center-align text */
+    color: darkgreen; /* Set text color to white */
+    font-weight: bold; /* Make the text bold */
+    position: absolute; /* Position the text absolutely */
+    top: 10px; /* Adjust the top position as needed */
+    left: 50%; /* Horizontally center the text */
+    transform: translateX(-50%); /* Center horizontally */
+}
+
+
+
+/* Adjust the height of the bottom-border container */
+.bottom-border {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    height: 30%; /* Increase the height as needed */
+}
+
+.border-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between; /* This will distribute space evenly */
+}
+
+.top-border .border-item,
+.bottom-border .border-item {
+    height: 200px; /* Increase this value as per your requirement */
+    /* Other styles remain the same */
+}
+
+/* Optionally adjust padding or margin if necessary */
+.top-border,
+.bottom-border {
+    padding: 10px; /* Adjust if needed */
+}
+
+.main-content-area .text-content {
+    color: darkgreen; /* Text color */
+    font-size: 16px; /* Text size */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding around the text */
+    /* Add any other styles you need */
+}
+
+.main-content-area {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    border: 1px solid #ccc;
+    align-items: center;
+    justify-content: center;
+    height: 95%;
+    overflow: auto;
+    background-color: rgba(1, 100, 23, 0.149); /* Opaque white */
+}
+
+#dynamic-text {
+    font-size: 40px; /* Adjust the font size as needed */
+    font-family: 'Times New Roman', Times, serif; /* Change the font family */
+    color: darkgreen; /* Set text color to white */
+    font-weight: normal; /* Make the text bold */
+    text-align: center;
+    margin-top: 25%;
+
+}
+
+
+.centered-text {
+    text-align: center;
+    color: darkgreen;
+    font-weight: bold;
+    position: absolute;
+    top: 10px; /* Adjust the top position for the main title */
+    left: 0;
+    right: 0;
+    transform: translateX(0);
+    font-size: 36px; /* Adjust the font size for the main title */
+}
+
+h2.centered-text {
+    margin-top: 10%;
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: center;
+    color: darkgreen;
+    font-weight: bold;
+    position: absolute;
+    top: 20px; /* Adjust the top position for the subtitle */
+    left: 0;
+    right: 0;
+    font-family: 'bugaki', Times, serif; /* Change the font family */
+    color: darkgreen; /* Set text color to white */
+    font-weight: normal; /* Make the text bold */
+    font-size: 25px; /* Adjust the font size for the subtitle */
+}
